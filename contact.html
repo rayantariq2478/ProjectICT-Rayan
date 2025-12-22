@@ -63,6 +63,37 @@
             background: #fff4e6;
             padding: 15px;
             border-left: 6px solid #ff8c1a;
+            margin-bottom: 20px;
+        }
+
+        form input {
+            width: 60%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            background: #ffb366;
+            color: #4a2c00;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Notification style */
+        .notification {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #dff0d8;
+            color: #3c763d;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
         }
 
         footer {
@@ -73,6 +104,19 @@
             margin-top: auto;
         }
     </style>
+
+    <script>
+        function showNotification() {
+            document.getElementById("notify").style.display = "block";
+
+            // Redirect to home page after 2 seconds
+            setTimeout(function () {
+                window.location.href = "indexx.html";
+            }, 2000);
+
+            return false;
+        }
+    </script>
 </head>
 
 <body>
@@ -99,6 +143,22 @@
                 <p><strong>Phone:</strong> +92 300 1234567</p>
             </div>
 
+            <h2>Send Your Details</h2>
+
+            <!-- FORM -->
+            <form onsubmit="return showNotification();">
+                <input type="text" placeholder="Enter your name" required><br>
+                <input type="email" placeholder="Enter your email" required><br>
+                <input type="tel" placeholder="Enter your phone number" required><br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <!-- Notification message -->
+            <div id="notify" class="notification">
+                Details Submitted
+            </div>
+
         </div>
     </div>
 
@@ -108,3 +168,5 @@
 
 </div>
 
+</body>
+</html>
